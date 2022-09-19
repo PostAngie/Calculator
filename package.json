@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
-    "build": "cd client && npm install && npm run build"
+    "build": "npm run build --prefix client",
+    "deploy" : "npm run build --prefix client&&gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -18,9 +19,12 @@
   "bugs": {
     "url": "https://github.com/PostAngie/Calculator/issues"
   },
-  "homepage": "https://postangie.github.io/Calculator/",
+  "homepage": "https://postangie.github.io/Calculator",
   "dependencies": {
     "express": "^4.18.1",
     "nodemon": "^2.0.20"
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }

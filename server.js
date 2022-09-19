@@ -5,7 +5,7 @@ const fs = require('fs');
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-app.use(express.static(path.resolve(__dirname, '../client/build')));
+app.use(express.static(path.resolve(__dirname, './client/build')));
 app.use(express.json());
 
 app.get("/api/memo", (req, res) => {
@@ -36,7 +36,7 @@ app.post('/api/memo', (req, res) => {
 });
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+  res.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
 });
 
 app.listen(PORT, () => {
